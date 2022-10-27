@@ -1,5 +1,7 @@
 # Custom select on Vue 3
 
+![Preview](preview.png)
+
 ## Project setup
 ```
 npm install

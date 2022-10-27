@@ -110,67 +110,67 @@ export default {
       countries: [
         {
           value: 1,
-          label: 'Абхазия',
+          label: 'Australia',
         },
         {
           value: 2,
-          label: 'Австралия',
+          label: 'Austria',
         },
         {
           value: 3,
-          label: 'Австрия',
+          label: 'Azerbaijan',
         },
         {
           value: 4,
-          label: 'Азербайджан', 
+          label: 'Belgium', 
         },
         {
           value: 5,
-          label: 'Албания',
+          label: 'Brazil',
         },
         {
           value: 6,
-          label: 'Алжир',
+          label: 'Germany',
         },
         {
           value: 7,
-          label: 'Американское Самоа',
+          label: 'Greece',
         },
         {
           value: 8,
-          label: 'Ангола',
+          label: 'India',
         },
         {
           value: 9,
-          label: 'Багамы',
+          label: 'Indonesia',
         },
         {
           value: 10,
-          label: 'Бангладеш',
+          label: 'Italy',
         },
         {
           value: 11,
-          label: 'Бахрейн',
+          label: 'Kenya',
         },
         {
           value: 12,
-          label: 'Германия',
+          label: 'Laos',
         },
         {
           value: 13,
-          label: 'Грузия',
+          label: 'Luxembourg',
         },
         {
           value: 14,
-          label: 'Египет',
+          label: 'Malaysia',
         },
         {
           value: 15,
-          label: 'Канада',
+          label: 'United States of America',
         },
         {
           value: 16,
-          label: 'Соединенные Штаты Америки',
+          label: 'Vietnam',
         },
       ],
       auto1: 3,
@@ -195,36 +195,35 @@ export default {
         },
       ],
       day: 1,
-      day2: 1,
       days: [
       {
           value: 1,
-          label: 'Понедельник',
+          label: 'Monday',
         },
         {
           value: 2,
-          label: 'Вторник',
+          label: 'Tuesday',
         },
         {
           value: 3,
-          label: 'Среда',
+          label: 'Wednesday',
         },
         {
           value: 4,
-          label: 'Четверг',
+          label: 'Wednesday',
         },
         {
           value: 5,
-          label: 'Пятница',
+          label: 'Friday',
         },
         {
           value: 6,
-          label: 'Суббота',
+          label: 'Saturday',
           disabled: true,
         },
         {
           value: 7,
-          label: 'Воскресенье',
+          label: 'Sunday',
           disabled: true,
         },
       ],
@@ -278,7 +277,7 @@ form {
     justify-content: space-between;
     margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid #aaa;
+    border: 1px solid #ddd;
     border-radius: 5px;
     max-width: 600px;
 
