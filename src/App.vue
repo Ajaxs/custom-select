@@ -4,7 +4,7 @@
       <div class="row">
         <div class="column">
           <label>Autos:</label>
-          <ax-picklist 
+          <nwx-select 
             v-model="auto1" 
             name="auto1"            
             :options="autos"             
@@ -18,7 +18,7 @@
       <div class="row">
         <div class="column">
           <label>Clearable model:</label>
-          <ax-picklist 
+          <nwx-select 
             v-model="auto2"
             name="auto2" 
             clearable 
@@ -34,7 +34,7 @@
       <div class="row">
         <div class="column">
           <label>Disabled select:</label>
-          <ax-picklist 
+          <nwx-select 
             v-model="auto3"
             name="auto3"
             disabled
@@ -49,7 +49,7 @@
       <div class="row">
         <div class="column">
           <label>Disabled options:</label>
-          <ax-picklist 
+          <nwx-select 
             v-model="day"
             name="day"
             :options="days"             
@@ -63,7 +63,7 @@
       <div class="row">
         <div class="column">
           <label>Filterable:</label>
-          <ax-picklist
+          <nwx-select
             v-model="country" 
             name="country"
             filterable
@@ -80,7 +80,7 @@
       <div class="row">
         <div class="column">
           <label>Multiple:</label>
-          <ax-picklist
+          <nwx-select
             v-model="color" 
             name="color"
             multiple
@@ -92,17 +92,77 @@
           <code>{{ color }}</code>
         </div>
       </div>
+
+      <div class="row">
+        <div class="column">
+          <label>Multiple filtrable:</label>
+          <nwx-select
+            v-model="color2" 
+            name="color"
+            multiple
+            filterable
+            clearable
+            :options="colors"             
+          />
+        </div>
+        <div class="model">
+          <p>Model:</p>
+          <code>{{ color2 }}</code>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <label>Multiple limit:</label>
+          <nwx-select
+            v-model="color3" 
+            name="color"
+            multiple
+            clearable
+            limit="3"
+            :options="colors"
+            placeholder="Max 3 options"         
+          />
+        </div>
+        <div class="model">
+          <p>Model:</p>
+          <code>{{ color3 }}</code>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <label>Custom template:</label>
+          <nwx-select
+            v-slot="props"
+            v-model="curency" 
+            name="curency"
+            :options="curencies"
+            filterable             
+          >
+            <div class="curency-option">
+              <span class="label">{{ props.option.label }}</span>
+              <span class="gray">{{ props.option.curency }}</span>
+            </div>
+          </nwx-select>
+        </div>
+        <div class="model">
+          <p>Model:</p>
+          <code>{{ curency }}</code>
+        </div>
+      </div>
+
     </form>
   </div>
 </template>
 
 <script>
-import AxPicklist from '@/components/AxPicklist.vue';
+import NwxSelect from '@/components/NwxSelect.vue';
 
 export default {
   name: 'App',
   components: {
-    AxPicklist,
+    NwxSelect,
   },
   data() {
     return {
@@ -166,7 +226,7 @@ export default {
         },
         {
           value: 15,
-          label: 'United States of America',
+          label: 'United States',
         },
         {
           value: 16,
@@ -228,6 +288,8 @@ export default {
         },
       ],
       color: [2],
+      color2: [1,3],
+      color3: [],
       colors: [
       {
           value: 1,
@@ -248,8 +310,40 @@ export default {
         {
           value: 5,
           label: 'Black',
+          disabled: true,
+        },
+        {
+          value: 6,
+          label: 'Pink',
+        },
+        {
+          value: 7,
+          label: 'Gray',
         },
       ],
+      curency: null,
+      curencies: [
+        {
+          value: 1,
+          label: 'United States',
+          curency: 'USD',
+        },
+        {
+          value: 2,
+          label: 'France',
+          curency: 'EUR',
+        },
+        {
+          value: 3,
+          label: 'Russian Federation',
+          curency: 'RUB',
+        },
+        {
+          value: 4,
+          label: 'Armenia',
+          curency: 'AMD',
+        },
+      ]
     }
   },
 }
@@ -290,5 +384,24 @@ form {
       flex-shrink: 0;
     }
   }  
+}
+
+
+
+.curency-option {
+  display: flex;
+  justify-content: space-between;
+
+  .gray {
+    color: #888;
+  }
+}
+
+.selected {
+  .curency-option {
+    .label {
+      color: #409eff;
+    }
+  }
 }
 </style>
